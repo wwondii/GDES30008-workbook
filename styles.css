@@ -1,0 +1,94 @@
+        * {   margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        #bg-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.62);
+        z-index: 0;
+        pointer-events: none;
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .background-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        .rec {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            height: 80px;
+        }
+        .battery {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            height: 80px;
+        }
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+        }
+        .links {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+        }
+        .links a {
+            display: block;
+            color: rgb(255, 255, 255);
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-style: italic;
+            text-decoration: none;
+            font-size: 50px;
+            margin-bottom: 5px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+            color: rgb(109, 0, 0);
+        }
+
+        #flash {
+            position: absolute;
+            inset: 0;
+            background: rgb(140, 140, 140);
+            z-index: 10;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.05s ease;
+        }
+
+        /* Button */
+        .shutter-btn {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            z-index: 5;
+            background: white;
+            color: black;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 14px 22px;
+            border: none;
+            cursor: pointer;
+            border-radius: 1px;
+        }

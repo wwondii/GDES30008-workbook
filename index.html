@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <title>Main Camera Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+<!--Video background of the page-->
+        <video class="background-video" id="bg-video" autoplay muted loop>
+            <source src="videos/vhs_tape.mp4" type="video/mp4">
+        </video>
+          <div id="bg-overlay"></div>
+
+<!--Assets/icons of the page-->
+        <img src="images/rec_asset.png" alt="REC" class="rec">
+        <img src="images/battery_asset.png" alt="Battery" class="battery">
+        <img src="images/frames_asset.png" alt="Frame" class="frame">
+<!--Anchors-->
+        <div class="links">
+            <a href="weekspage.html">My WORKBOOK</a>
+            <a href="research.html">Research</a>
+        </div>
+<!--Button to Take Photo-->
+        <button class="shutter-btn" onclick="takePicture()">Take picture!</button>   
+
+<!--White container to simulate flash-->
+        <div id="flash"></div>
+    </div>
+
+<!--Simulate Flash: Code made with some assistance from Claude AI-->
+    <script>
+    function takePicture() {
+        const flash = document.getElementById('flash');
+        const video = document.getElementById('bg-video');
+        const source = video.querySelector('source');
+
+        // Flash
+        flash.style.opacity = '1';
+        setTimeout(() => flash.style.opacity = '0', 80);
+
+        // Swap to new video
+        source.src = 'videos/photos_taken.mp4';
+        video.load();
+        video.play();
+
+        // Swap back after 3 seconds
+        setTimeout(() => {
+            source.src = 'videos/vhs_tape.mp4';
+            video.load();
+            video.play();
+        }, 3000);
+    }
+    </script>
+
+</body>
+</html>
